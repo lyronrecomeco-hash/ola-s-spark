@@ -24,37 +24,37 @@ const whatsapp = "5527997461658";
 const experiences = [
   [
     Heart,
-    "A espera",
+    "Gestação em detalhes",
     "Gestante",
-    "A beleza de uma fase inteira traduzida em imagens leves, íntimas e verdadeiras.",
+    "Para registrar o corpo que muda, a expectativa da família e os detalhes que anunciam uma nova chegada.",
     "/images/portfolio/DdHrMtRibTg.jpg",
   ],
   [
     Baby,
-    "A chegada",
+    "Primeiros dias",
     "Parto & Newborn",
-    "O primeiro encontro, os pequenos detalhes e tudo o que acontece rápido demais.",
+    "Do encontro no parto à delicadeza do recém-nascido, sem interromper o que está acontecendo.",
     "/images/portfolio/DdMQkopkT1X.jpg",
   ],
   [
     Church,
-    "A fé e os afetos",
+    "Fé em família",
     "Batizados",
-    "Celebrações cheias de significado, registradas com discrição e sensibilidade.",
+    "A cerimônia, os símbolos e a presença de quem tornou esse dia especial para a família.",
     "/images/portfolio/DdrL0SPEaKt.jpg",
   ],
   [
     Sparkles,
-    "Sua história",
+    "Datas que importam",
     "Celebrações",
-    "Aniversários, conquistas e encontros que merecem permanecer além daquele dia.",
+    "Aniversários, casamentos e conquistas contados por gestos, detalhes e relações reais.",
     "/images/portfolio/DdXMSYciSqK.jpg",
   ],
   [
     UserRound,
-    "Sua presença",
+    "Imagem profissional",
     "Retratos profissionais",
-    "Imagens que comunicam confiança, personalidade e o valor do seu trabalho.",
+    "Retratos planejados para profissionais que precisam transmitir autoridade sem perder personalidade.",
     "/images/portfolio/Dde7RIDCfIl.jpg",
   ],
 ] as const;
@@ -69,6 +69,7 @@ const portfolio = [
   ["/images/portfolio/Dde7RIDCfIl.jpg", "Profissional", "Presença e propósito"],
   ["/images/portfolio/DdXMSYciSqK.jpg", "Celebrações", "Memórias que ficam"],
   ["/images/portfolio/DdwC6FpRV9B.jpg", "Gestante", "A espera em cada detalhe"],
+  ["/images/portfolio/DdjjJP3Ceho.jpg", "Celebrações", "Detalhes da cerimônia"],
 ] as const;
 const categories = [
   "Todos",
@@ -139,7 +140,7 @@ function Index() {
           <a href="#experiencias">Experiências</a>
           <a href="#portfolio">Portfólio</a>
           <a href="#sobre">Sobre</a>
-          <a href="#depoimentos">Depoimentos</a>
+          <a href="#diferenciais">O olhar</a>
           <button onClick={() => go("orcamento")}>Solicitar orçamento</button>
         </nav>
         <button className="menu-button" onClick={() => setMenu(true)} aria-label="Abrir menu">
@@ -165,7 +166,7 @@ function Index() {
                 ["experiencias", "Experiências"],
                 ["portfolio", "Portfólio"],
                 ["sobre", "Sobre"],
-                ["depoimentos", "Depoimentos"],
+                ["diferenciais", "O olhar"],
               ].map(([id, label]) => (
                 <button key={id} onClick={() => navigate(id)}>
                   {label}
@@ -181,53 +182,71 @@ function Index() {
         </div>
       )}
 
-      <section className="hero" id="inicio">
-        <div className="hero-bg" />
-        <div className="hero-shade" />
+      <section className="hero editorial-hero" id="inicio">
+        <div className="hero-paper" />
         <div className="hero-content">
-          <p className="kicker light">Fotógrafa em Linhares — ES</p>
+          <p className="kicker">Geisielly Silva • Fotógrafa em Linhares</p>
           <h1>
-            Histórias que o<br />
-            <em>tempo não leva.</em>
+            O que passa
+            <br />
+            <em>vira memória.</em>
           </h1>
           <p>
-            Fotografia sensível para guardar a beleza dos encontros, das chegadas e de tudo aquilo
-            que transforma uma vida.
+            Parto, gestação, newborn, batizados, celebrações e retratos profissionais registrados
+            com direção delicada e atenção aos detalhes reais.
           </p>
           <div>
             <button className="primary pale" onClick={() => go("experiencias")}>
               Conhecer experiências <ArrowRight />
             </button>
-            <button className="ghost" onClick={() => go("portfolio")}>
+            <button className="ghost dark" onClick={() => go("portfolio")}>
               <Camera /> Ver portfólio
             </button>
+          </div>
+        </div>
+        <div className="hero-gallery" aria-label="Seleção de trabalhos da Geisielly Silva">
+          <figure className="hero-main-photo">
+            <img src="/images/portfolio/DdMQkopkT1X.jpg" alt="Ensaio newborn por Geisielly Silva" />
+            <figcaption>
+              Newborn <span>•</span> cuidado em cada detalhe
+            </figcaption>
+          </figure>
+          <figure className="hero-side-photo">
+            <img
+              src="/images/portfolio/Dde7RIDCfIl.jpg"
+              alt="Retrato profissional por Geisielly Silva"
+            />
+          </figure>
+          <div className="hero-stamp glass">
+            <strong>GS</strong>
+            <small>guardiã de lindas histórias</small>
           </div>
         </div>
       </section>
 
       <section className="manifesto pad">
-        <p className="kicker">Um olhar para o que importa</p>
+        <p className="kicker">Fotografar sem interromper</p>
         <blockquote>
-          “Mais do que fotografar, meu trabalho é perceber aquilo que acontece{" "}
-          <em>entre os momentos.</em>”
+          Não é sobre montar uma cena perfeita. É sobre reconhecer quando algo verdadeiro
+          <em> está acontecendo.</em>
         </blockquote>
         <p>
-          Um toque, um olhar, uma espera. Detalhes que duram poucos segundos, mas carregam uma
-          história inteira.
+          A mão que procura outra mão, a ansiedade antes da chegada, a família reunida e a expressão
+          que dura apenas um segundo. É daí que nasce o trabalho da Geisielly.
         </p>
       </section>
 
       <section className="pad" id="experiencias">
         <Heading
-          kicker="Experiências"
+          kicker="O que ela fotografa"
           title={
             <>
-              Cada fase merece
+              Um trabalho diferente
               <br />
-              ser <em>sentida outra vez.</em>
+              para <em>cada tipo de história.</em>
             </>
           }
-          text="Encontre a experiência que conversa com o momento que você está vivendo."
+          text="Nada de encaixar todo mundo no mesmo ensaio. Cada serviço parte do momento, das pessoas e do que precisa ser preservado."
         />
         <div className="experience-grid">
           {experiences.map(([Icon, eyebrow, title, text, image], i) => (
@@ -263,13 +282,13 @@ function Index() {
         <div>
           <p className="kicker">Jornada da maternidade</p>
           <h2>
-            O começo de um amor,
+            Quatro capítulos.
             <br />
-            <em>contado por inteiro.</em>
+            <em>Uma mesma história.</em>
           </h2>
           <p>
-            Há histórias que não cabem em um único dia. A jornada acompanha cada transformação com o
-            mesmo cuidado, criando um acervo que cresce junto com a família.
+            A proposta é acompanhar a família sem tratar cada fase como um trabalho isolado. O
+            resultado é um acervo visual coerente, da gestação aos primeiros capítulos do bebê.
           </p>
           <ol>
             {[
@@ -296,9 +315,15 @@ function Index() {
       <section className="portfolio pad" id="portfolio">
         <div className="portfolio-head">
           <p className="kicker light">Portfólio</p>
-          <h2>
-            Memórias que <em>ficam.</em>
-          </h2>
+          <div className="portfolio-title-row">
+            <h2>
+              Portfólio <em>sem recortes.</em>
+            </h2>
+            <p>
+              Todas as imagens aparecem na proporção original. Clique para ampliar e observar cada
+              detalhe do trabalho.
+            </p>
+          </div>
           <div className="filters">
             {categories.map((c) => (
               <button
@@ -355,31 +380,37 @@ function Index() {
       <section className="process pad">
         <Heading
           centered
-          kicker="Sua experiência"
+          kicker="Do primeiro contato à entrega"
           title={
             <>
-              Leve, próxima e <em>sem pressa.</em>
+              Você sabe o que acontece
+              <br />
+              antes de <em>marcar a data.</em>
             </>
           }
-          text="Você não precisa saber posar. O cuidado é criar espaço para que sua história aconteça naturalmente."
+          text="Um processo simples para tirar dúvidas, alinhar expectativas e permitir que o ensaio aconteça com tranquilidade."
         />
         <div>
           {[
             [
               "01",
               "Você me conta",
-              "Conversamos sobre a fase e tudo o que torna esse momento único.",
+              "Você informa o tipo de registro, a data, a cidade e quem participará.",
             ],
             [
               "02",
               "Planejamos juntos",
-              "Definimos estilo, local, data e os detalhes para você chegar tranquila.",
+              "Geisielly orienta local, horário, roupas e os detalhes importantes para aquele serviço.",
             ],
-            ["03", "Vivemos o momento", "Direção leve para que você se reconheça em cada imagem."],
+            [
+              "03",
+              "A fotografia acontece",
+              "Com direção quando necessário e espaço para os gestos espontâneos aparecerem.",
+            ],
             [
               "04",
               "Sua história chega",
-              "Uma seleção tratada com atenção, pronta para atravessar gerações.",
+              "As imagens selecionadas recebem tratamento cuidadoso, preservando tons de pele e atmosfera.",
             ],
           ].map((x) => (
             <article key={x[0]}>
@@ -437,65 +468,62 @@ function Index() {
         </div>
       </section>
 
-      <section className="testimonials pad" id="depoimentos">
+      <section className="testimonials pad" id="diferenciais">
         <Heading
-          kicker="Histórias reais"
+          kicker="O que sustenta o trabalho"
           title={
             <>
-              O que fica depois
+              Técnica para conduzir.
               <br />
-              <em>da fotografia.</em>
+              Sensibilidade para <em>não interferir.</em>
             </>
           }
-          text="Experiências contadas por quem já confiou suas memórias a esse olhar."
+          text="A identidade do portfólio aparece na combinação entre direção, observação e cuidado com aquilo que não pode ser repetido."
         />
         <div className="quotes">
           {[
             [
-              "Um trabalho feito com uma sensibilidade que não dá para explicar. Em cada foto conseguimos sentir exatamente como foi viver aquele dia.",
-              "Família registrada",
-              "Maternidade",
+              "Parto e newborn pedem presença silenciosa. O registro acontece respeitando o ritmo da mãe, do bebê e da família.",
+              "Presença discreta",
+              "Sem transformar afeto em pose",
             ],
             [
-              "Me senti segura, acolhida e muito à vontade. As imagens realmente têm a nossa essência.",
-              "Cliente Geisielly Silva",
-              "Ensaio feminino",
+              "Nos ensaios dirigidos, cada orientação existe para deixar a pessoa confortável e fazer a imagem continuar parecendo verdadeira.",
+              "Direção cuidadosa",
+              "Segurança sem rigidez",
             ],
             [
-              "Ela registrou detalhes que nem percebemos. Hoje temos lembranças que vão acompanhar nossa família para sempre.",
-              "Família registrada",
-              "Celebração",
+              "Do branco e preto aos tons quentes, o tratamento preserva a atmosfera, a pele e os pequenos elementos da cena.",
+              "Edição coerente",
+              "Identidade em cada entrega",
             ],
-          ].map(([text, who, type]) => (
-            <article className="glass" key={type}>
+          ].map(([text, title, detail]) => (
+            <article className="glass" key={title}>
               <Quote />
-              <p>“{text}”</p>
+              <p>{text}</p>
               <footer>
-                <span>{who[0]}</span>
+                <span>{title[0]}</span>
                 <div>
-                  <b>{who}</b>
-                  <small>{type}</small>
+                  <b>{title}</b>
+                  <small>{detail}</small>
                 </div>
               </footer>
             </article>
           ))}
         </div>
-        <small className="demo-note">
-          Depoimentos demonstrativos — substituir pelos relatos originais antes da publicação final.
-        </small>
       </section>
 
       <section className="budget pad" id="orcamento">
         <div>
-          <p className="kicker light">Vamos conversar?</p>
+          <p className="kicker light">Orçamento direcionado</p>
           <h2>
-            Qual história você
+            Conte o essencial.
             <br />
-            quer <em>guardar?</em>
+            Ela continua <em>a conversa.</em>
           </h2>
           <p>
-            Conte um pouco sobre o momento. Suas respostas chegam organizadas para que o primeiro
-            contato já comece de um jeito mais próximo.
+            Escolha o serviço e envie data, cidade e contexto. A mensagem chega organizada no
+            WhatsApp para que Geisielly possa responder com as informações certas para o seu caso.
           </p>
           <div className="direct">
             <MessageCircle />
